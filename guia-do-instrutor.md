@@ -4,10 +4,14 @@ Guia do instrutor. Montado a partir do que você **já usa** nos projetos
 `sysenota`, `syscomm`, `sysepesquisa`, `syseprotocolo`, `syseassociacao` e nas skills
 `sysetemplate-*`. Nada aqui é teoria genérica: cada módulo tem um artefato real para abrir na tela.
 
-> Premissas que assumi (ajuste se for diferente): público de 4 a 10 devs Java/Angular da Supridata,
-> que já usam Claude Code de forma intuitiva ("chat que escreve código") e precisam subir para o seu
-> padrão. Formato: **2 encontros de 3h**, ou 1 dia inteiro. Máquina do dev com o repo clonado e
-> rodando — treinamento é no teclado deles, não no seu.
+> **Turma: 3 devs** Java/Angular da Supridata que **já usam o Claude Code** no dia a dia. Com três
+> pessoas não existe plateia: isto é workshop de teclado — os três com o repositório clonado e
+> rodando, e cada bloco terminando com eles executando, não com você falando. Duração ainda em
+> aberto: a grade abaixo é modular, com três montagens possíveis.
+>
+> Como eles já usam a ferramenta, o módulo 0 é curto e a conversa não é "o que é o Claude Code": é
+> *por que a sua sessão azeda depois de uma hora e a dele não*. Espere resistência boa nos módulos de
+> spec e evidência — é onde o método cobra disciplina de quem já tem velocidade.
 
 ---
 
@@ -32,30 +36,36 @@ Frase de efeito que funciona bem com dev sênior:
 
 ---
 
-## 2. Grade sugerida
+## 2. Grade modular
 
-### Encontro 1 — Fundamentos e os quatro artefatos (3h)
+Dez blocos. A coluna **peso** diz o que você corta primeiro quando o tempo apertar: `núcleo` não sai
+de jeito nenhum; `apoio` sai se precisar; `extra` é bônus para turma animada.
 
-| Bloco | Tempo | Conteúdo |
+| # | Bloco | Tempo | Peso | Slide inicial |
+|---|---|---|---|---|
+| 0 | Modelo mental: contexto, laço, verificação | 15 min | núcleo | `tese` |
+| 1 | **Memória** — `CLAUDE.md` e `AGENTS.md` | 30 min | núcleo | `memoria` |
+| 2 | **Roadmap** — estado compartilhado com evidência | 25 min | núcleo | `roadmap` |
+| 3 | **Spec** — numeração, critério de pronto, retomada | 40 min | núcleo | `spec-acervo` |
+| 4 | **Skill** — anatomia, gatilho, references, scripts | 45 min | núcleo | `skill-anatomia` |
+| 5 | Exercício: cada um escreve uma skill pequena | 30 min | núcleo | — |
+| 6 | **Tokens e contexto** — por que a sessão degrada | 35 min | núcleo | `tokens-sessao` |
+| 7 | **Modelos** — qual usar para quê, e o custo em produto | 25 min | apoio | `modelos` |
+| 8 | **RAG** — o catálogo semântico do SysEPesquisa | 40 min | apoio | `rag-catalogo` |
+| 9 | **Qualidade** — E2E como prova, não enfeite | 25 min | núcleo | `qualidade` |
+| 10 | Laboratório final + combinados escritos | 35 min | núcleo | `combinados` |
+
+Soma: **5h45** com tudo, **4h20** só com o núcleo. Três montagens que funcionam:
+
+| Montagem | Como fica | Quando escolher |
 |---|---|---|
-| 0 | 20 min | Modelo mental: contexto, ferramentas, loop. Por que "prompt bonito" não escala |
-| 1 | 30 min | **Memória** — `CLAUDE.md` e `AGENTS.md` |
-| 2 | 30 min | **Roadmap** — o `ROADMAP.md` como estado compartilhado |
-| 3 | 40 min | **Spec** — `.spec/` numerada, com critério de pronto |
-| — | 15 min | intervalo |
-| 4 | 45 min | **Skill** — anatomia, gatilho, references, scripts |
-| 5 | 20 min | Exercício guiado: todos criam uma skill pequena |
+| **Dois encontros de 3h** (recomendado) | 0–5 no primeiro, 6–10 no segundo | Eles voltam na semana seguinte tendo usado o padrão — e você corrige o que não pegou |
+| **Um dia (9h–16h)** | Núcleo + 7 e 8, dois intervalos e almoço | Agenda fecha de uma vez; cansa mais e rende menos no laboratório final |
+| **Quatro encontros de 90 min** | 0–2 · 3–4 · 5–6 · 7–10 | Melhor absorção, pior logística. Bom se eles estiverem tocando entrega |
 
-### Encontro 2 — Economia, IA no produto e qualidade (3h)
-
-| Bloco | Tempo | Conteúdo |
-|---|---|---|
-| 6 | 45 min | **Tokens e contexto** — por que a sessão degrada e como evitar |
-| 7 | 30 min | **Modelos** — qual usar para quê, dentro e fora do Claude Code |
-| 8 | 45 min | **RAG na prática** — o catálogo semântico do SysEPesquisa |
-| — | 15 min | intervalo |
-| 9 | 30 min | **Qualidade** — E2E como prova, não como enfeite |
-| 10 | 30 min | Laboratório final + combinados do time |
+Com 3 pessoas, "dupla" nos exercícios vira **trio num teclado** (um digita, dois revisam, trocam a
+cada exercício) ou **três sessões em paralelo** com você circulando. O trio funciona melhor nos
+módulos 3 e 5, onde a discussão é o conteúdo; o paralelo funciona melhor no laboratório final.
 
 ---
 

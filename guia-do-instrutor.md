@@ -13,6 +13,18 @@ Guia do instrutor. Montado a partir do que você **já usa** nos projetos
 > *por que a sua sessão azeda depois de uma hora e a dele não*. Espere resistência boa nos módulos de
 > spec e evidência — é onde o método cobra disciplina de quem já tem velocidade.
 
+## O material
+
+| Peça | Onde |
+|---|---|
+| **Slides** (21, com notas do apresentador) | <https://claude.ai/artifact/VdFvgSYncQDAZnFSKUHVnV> |
+| **Apostila do aluno** | [apostila-aluno.md](apostila-aluno.md) — imprima ou mande antes |
+| **Templates em branco** | [templates/](templates) — copie para os repositórios do time |
+
+O deck é privado: se alguém mais precisar abrir o link, compartilhe pelo menu Share da própria
+página. Ele exporta para PowerPoint e PDF, e as notas de cada slide estão no painel do apresentador.
+A coluna "slide inicial" da grade (§2) diz onde cada bloco começa.
+
 ---
 
 ## 1. A tese do treinamento (diga isso no primeiro slide)

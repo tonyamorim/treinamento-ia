@@ -15,9 +15,12 @@ specs numeradas e skills com `references/` e `scripts/`.
 | [guia-do-instrutor.md](guia-do-instrutor.md) | você | Grade modular, roteiro de cada bloco, o que abrir na tela, exercícios, conselhos de execução |
 | [apostila-aluno.md](apostila-aluno.md) | os devs | Referência de consulta com exercícios para preencher, cola de uma página e os compromissos pós-treinamento |
 | [templates/](templates) | os devs | `CLAUDE.md.modelo`, `NNN-tema.spec.md.modelo`, `SKILL.md.modelo` — em branco, comentados, prontos para copiar para os repositórios |
+| [slides/deck.html](slides/deck.html) | você | Os 21 slides num arquivo só, com a nota do apresentador abaixo de cada um. Abre em qualquer navegador, sem servidor; imprimir gera um PDF de uma página por slide (A4 paisagem) |
+| [slides/project/](slides/project) | — | Fonte dos slides, como estão no deck online: `deck.json` (ordem, seções, fontes) e um HTML por slide |
 
-Os slides ficam num deck separado (link no guia do instrutor), com notas do apresentador em cada
-slide e exportação para PowerPoint ou PDF.
+Os slides também vivem num deck online (link no guia do instrutor), que é onde se edita e de onde
+sai a exportação para PowerPoint e o modo de apresentação. O que está em `slides/` é a cópia baixada
+em 19/10: se você editar o deck online, baixe de novo para o repositório ficar igual.
 
 ## Antes do treinamento
 

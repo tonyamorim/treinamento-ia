@@ -1,0 +1,24 @@
+<section id="skill-script" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Se é mecânico, a skill entrega um script</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FDFDFB;padding:40px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#6A7179">sysetemplate-tema-claro-escuro/scripts/</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:30px;color:#101D2C">migrar-cores.cjs</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:30px;color:#101D2C">capturas-tema.cjs</p>
+<p style="font-size:28px;line-height:1.5;color:#45535F">Trocar 200 cores <span style="font-family:'JetBrains Mono', 'Courier New', monospace">#hex</span> por variáveis é trabalho determinístico: um script faz certo, barato e <b>igual toda vez</b>.</p>
+<p style="font-size:28px;line-height:1.5;color:#45535F">O modelo decide <b>quando</b> rodar. O script garante <b>como</b>.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Onde cada skill mora</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 20px">
+<tr><th style="width:44%;text-align:left;font-weight:700;color:#101D2C">Local</th><th style="width:56%;text-align:left;font-weight:700;color:#101D2C">Escopo</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">~/.claude/skills/</td><td>todos os seus projetos</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">projeto/.claude/skills/</td><td>só aquele repo, versionado com ele</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">projeto/.agents/skills/</td><td>canônico, multiferramenta</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">No SysEPesquisa, <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.agents/skills/</span> é a fonte e <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.claude/skills/</span> é espelho. É a resposta pronta para “e quem usa outra ferramenta de IA?”.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Regra: fiz isto três vezes à mão? então deveria existir uma skill</p>
+<aside>Exercício central do dia: cada dupla escreve uma skill pequena de algo que o time já repete à mão. Entregável: SKILL.md com gatilho, passos numerados e um arquivo em references/. Testar na própria máquina antes de encerrar.</aside>
+</section>

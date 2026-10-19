@@ -1,0 +1,25 @@
+<section id="spec-retomada" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">O documento de retomada</h2>
+<p style="font-size:32px;line-height:1.4;color:#45535F;width:1560px">“Serve para quem chega sem o histórico da conversa — outra pessoa, outra IA, ou a mesma sessão depois de perder o contexto.”</p>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Hierarquia das fontes da verdade</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 20px">
+<tr><th style="width:34%;text-align:left;font-weight:700;color:#101D2C">Fonte</th><th style="width:66%;text-align:left;font-weight:700;color:#101D2C">Papel</th></tr>
+<tr><td>Delphi</td><td><b>árbitro</b> — é o que roda em produção</td></tr>
+<tr><td>Angular 8</td><td>inventário de campos, <b>não</b> de regras</td></tr>
+<tr><td>Banco</td><td>confirma volume e uso real</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F">E quando o Delphi e o banco divergem: <b>meça antes de decidir</b>.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Armadilhas do ambiente, escritas</h3>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">O <span style="color:#101D2C">deploy-web.sh</span> não usa <span style="color:#101D2C">set -e</span>: já ecoou sucesso sem publicar. Confira o bundle servido.</p>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">Não compare timestamp do container (UTC) com o do Windows (BRT). <b>Já gerou falso alarme duas vezes.</b></p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">syscomm/.spec/017-continuidade-do-trabalho.spec.md</p>
+<aside>Este é o truque mais transferível do método. Toda dor que custou meia tarde de depuração vira três linhas aqui — e nunca mais custa. Pergunte ao time: qual armadilha do nosso ambiente ainda não está escrita em lugar nenhum?</aside>
+</section>

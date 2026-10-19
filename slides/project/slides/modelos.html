@@ -1,0 +1,28 @@
+<section id="modelos" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Qual modelo, para quê</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:3;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Dentro do Claude Code</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:28px;color:#2B3A47;border:1px solid #D7DBD8;padding:18px 22px">
+<tr><th style="width:32%;text-align:left;font-weight:700;color:#101D2C">Modelo</th><th style="width:68%;text-align:left;font-weight:700;color:#101D2C">Situação</th></tr>
+<tr><td><b>Opus 5.5</b></td><td>Arquitetura, regra crítica do legado, depuração difícil, revisão</td></tr>
+<tr><td><b>Sonnet 5.5</b></td><td>Implementação rotineira dentro de uma spec já escrita</td></tr>
+<tr><td><b>Haiku 5.5</b></td><td>Mecânico em volume, classificação, busca, renomeação</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#B5751F">O erro comum é o oposto do esperado:</b> gastar pouco onde a decisão é caríssima — desenho de arquitetura, paridade com o legado — e muito onde não muda nada.</p>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">IA dentro do produto</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 18px">
+<tr><th style="width:44%;text-align:left;font-weight:700;color:#101D2C">Por 1M tokens</th><th style="width:28%;text-align:right;font-weight:700;color:#101D2C">entra</th><th style="width:28%;text-align:right;font-weight:700;color:#101D2C">sai</th></tr>
+<tr><td>Haiku 5.5</td><td style="text-align:right">US$ 0,10</td><td style="text-align:right">US$ 0,50</td></tr>
+<tr><td>Sonnet 5.5</td><td style="text-align:right">US$ 2,00</td><td style="text-align:right">US$ 10,00</td></tr>
+<tr><td>Opus 5.5</td><td style="text-align:right">US$ 4,00</td><td style="text-align:right">US$ 20,00</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F">Três alavancas, nesta ordem: <b>cache do prefixo estável</b>, <b>modelo por rota</b>, <b>lote</b> para o que não é interativo.</p>
+<p style="font-size:26px;line-height:1.5;color:#45535F">Mas o mais barato é <b>não chamar</b>: o SysEPesquisa já barra a geração pelo plano antes de gastar token.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Preços de 19/10/2026 · confirme antes de usar em proposta comercial</p>
+<aside>Conecte com o plano-ia.md: hoje o SysEPesquisa chama gpt-4o-mini. A conversa de custo por tenant é a mesma, muda a tabela. Lembre que qualquer byte que mude no prefixo invalida o cache — um timestamp no system prompt é o assassino clássico.</aside>
+</section>

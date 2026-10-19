@@ -1,0 +1,27 @@
+<section id="rag-catalogo" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">RAG</p>
+<h2 style="font-size:68px;font-weight:600;line-height:1.15">O catálogo semântico do SysEPesquisa</h2>
+</div>
+<p style="font-size:32px;line-height:1.45;color:#BFD3E8;width:1600px">“A IA propõe uma consulta; parser, catálogo, executor read-only e limites do backend decidem se ela pode ser executada.” Perguntas livres sobre dados agregados, <b style="color:#F7F7F2">sem dar o banco para a IA</b>.</p>
+<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Tabelas e colunas na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">Cinco tabelas, colunas nomeadas uma a uma, com sinônimos: “questionário” e “levantamento” caem em <span style="font-family:'JetBrains Mono', 'Courier New', monospace">pesquisa</span></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Joins na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">Seis caminhos permitidos. Outras combinações são rejeitadas <b>mesmo quando as duas tabelas são permitidas</b></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Funções na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">COUNT, SUM, AVG, MIN, MAX — e nada além disso</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#2A1E10;padding:32px;border:1px solid #6B4C1C;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#E0A94A">Fora de escopo, explícito</h3>
+<p style="font-size:25px;line-height:1.45;color:#EBD6B0">Resposta aberta individual, usuários, login, tokens, faturamento, logs de IA, qualquer tabela não listada</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">sysepesquisa/docs/catalogo-semantico-consultas-ia.md</p>
+<aside>Note que “fora de escopo” é tão detalhado quanto a allowlist. É isso que torna o documento auditável por alguém de fora — e defensável numa conversa sobre LGPD.</aside>
+</section>

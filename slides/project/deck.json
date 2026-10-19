@@ -1,0 +1,50 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-19T19:05:00Z" },
+  "lists": "css",
+  "title": "Treinamento IA — Supridata",
+  "order": [
+    "cover",
+    "tese",
+    "artefatos",
+    "loop",
+    "memoria",
+    "memoria-magro",
+    "roadmap",
+    "roadmap-evidencia",
+    "spec-acervo",
+    "spec-pronto",
+    "spec-retomada",
+    "skill-anatomia",
+    "skill-gatilho",
+    "skill-script",
+    "tokens-sessao",
+    "tokens-habitos",
+    "modelos",
+    "rag-catalogo",
+    "rag-padroes",
+    "qualidade",
+    "combinados"
+  ],
+  "sections": {
+    "s1": { "description": "Por que o contexto, e não o prompt, decide o resultado", "start": "cover" },
+    "s2": { "description": "Memória do repositório: CLAUDE.md e AGENTS.md", "start": "memoria" },
+    "s3": { "description": "Roadmap como estado compartilhado, sempre com evidência", "start": "roadmap" },
+    "s4": { "description": "Specs numeradas e o critério de pronto", "start": "spec-acervo" },
+    "s5": { "description": "Skills: padrão de projeto executável", "start": "skill-anatomia" },
+    "s6": { "description": "Contexto, tokens e escolha de modelo", "start": "tokens-sessao" },
+    "s7": { "description": "RAG como decisão de acesso, não de vetor", "start": "rag-catalogo" },
+    "s8": { "description": "Qualidade como prova e os combinados do time", "start": "qualidade" }
+  },
+  "faces": {
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+    },
+    "jetbrains-mono": {
+      "family": "JetBrains Mono",
+      "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+    }
+  },
+  "designSystems": []
+}

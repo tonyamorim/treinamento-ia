@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treinamento IA — Supridata</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+  :root { --escala: 0.8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 24px 64px; background: #20242B;
+         font-family: 'IBM Plex Sans', Arial, sans-serif; color: #E6EFF8; }
+  header.capa { max-width: 1100px; margin: 0 auto 40px; }
+  header.capa h1 { font-size: 34px; font-weight: 700; margin: 0 0 8px; }
+  header.capa p { font-size: 16px; line-height: 1.5; color: #9FB3C8; margin: 0; }
+  .pagina { margin: 0 auto 56px; width: calc(1920px * var(--escala)); max-width: 100%; }
+  .rotulo { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 13px;
+            color: #8FA3B8; margin: 0 0 8px; letter-spacing: 1px; }
+  .quadro { width: calc(1920px * var(--escala)); height: calc(1080px * var(--escala));
+            overflow: hidden; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.45); }
+  .quadro > section { width: 1920px; height: 1080px; position: relative; overflow: hidden;
+                      transform-origin: top left; transform: scale(var(--escala)); }
+  .quadro > section aside { display: none; }
+  .nota { width: calc(1920px * var(--escala)); margin-top: 12px; padding: 16px 20px;
+          background: #172B3D; border: 1px solid #2A4257; border-radius: 8px;
+          font-size: 15px; line-height: 1.55; color: #BFD3E8; }
+  .nota b { color: #7FB2E8; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
+  @media print {
+    :root { --escala: 0.57; }
+    body { background: #FFF; padding: 0; }
+    header.capa { display: none; }
+    .pagina { page-break-after: always; margin: 0 auto; }
+    .quadro { box-shadow: none; border-radius: 0; }
+    .nota { background: #F2F4F6; color: #2B3A47; border-color: #D7DBD8; }
+    @page { size: A4 landscape; margin: 8mm; }
+  }
+</style>
+</head>
+<body>
+<header class="capa">
+<h1>Treinamento IA — Supridata</h1>
+<p>C&oacute;pia offline do deck, com as notas do apresentador abaixo de cada slide.
+Arraste o controle do navegador (Ctrl + / Ctrl -) para ajustar, ou imprima em PDF &mdash;
+a impress&atilde;o sai uma p&aacute;gina por slide, em A4 paisagem.
+As fontes vêm do Google Fonts: sem internet, o navegador usa Arial e Courier.</p>
+</header>
+
+<article class="pagina">
+<p class="rotulo">01 / 21 &middot; <code>cover</code></p>
+<div class="quadro">
+<section id="cover" data-transition="fade" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">Supridata · desenvolvimento</p>
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 style="font-size:118px;font-weight:700;line-height:1.05;width:1500px">Desenvolvimento com IA, do jeito da casa</h1>
+<p style="font-size:40px;line-height:1.4;color:#BFD3E8;width:1280px">Roadmap, specs, memória, skills e RAG — os padrões que já rodam no SysENota, no Syscomm e no SysEPesquisa, transformados em método do time.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">Outubro de 2026 · workshop de teclado, 3 devs</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Abertura. Diga em uma frase: vocês já usam o Claude Code; este treinamento não é sobre a ferramenta, é sobre o método que faz a ferramenta acertar. Tudo o que vamos ver sai dos repositórios de vocês — nenhum exemplo inventado.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">02 / 21 &middot; <code>tese</code></p>
+<div class="quadro">
+<section id="tese" data-transition="push" style="background:#1C4C7C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#BFD8F0;letter-spacing:4px;text-transform:uppercase">A tese</p>
+<h2 style="font-size:96px;font-weight:700;line-height:1.1;width:1560px">O gargalo não é o modelo.<br>É o contexto que você dá a ele.</h2>
+<p style="font-size:36px;line-height:1.4;color:#DCEAF7;width:1400px">Você não pede código para a IA. Você constrói um ambiente em que ela só consegue acertar — e esse ambiente são quatro arquivos que vocês já mantêm.</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Pergunte antes de avançar: quem aqui já teve uma sessão que começou ótima e azedou depois de uma hora? Todos. O motivo não é o modelo ficar cansado — é o contexto. Esse é o fio do dia inteiro.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">03 / 21 &middot; <code>artefatos</code></p>
+<div class="quadro">
+<section id="artefatos" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Os quatro artefatos</h2>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:30px;color:#2B3A47;border:1px solid #D7DBD8;padding:20px 24px">
+<tr><th style="width:26%;text-align:left;font-weight:700;color:#101D2C">Artefato</th><th style="width:34%;text-align:left;font-weight:700;color:#101D2C">Onde fica</th><th style="width:40%;text-align:left;font-weight:700;color:#101D2C">A pergunta que ele responde</th></tr>
+<tr><td style="color:#101D2C"><b>Memória</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px">CLAUDE.md · AGENTS.md</td><td>Como se trabalha <i>neste</i> repositório?</td></tr>
+<tr><td style="color:#101D2C"><b>Roadmap</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px">ROADMAP.md</td><td>Onde estamos e o que falta?</td></tr>
+<tr><td style="color:#101D2C"><b>Spec</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px">.spec/NNN-tema.spec.md</td><td>O que exatamente é “pronto” aqui?</td></tr>
+<tr><td style="color:#101D2C"><b>Skill</b></td><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px">.claude/skills/</td><td>Como se faz <i>esta tarefa</i> do jeito da casa?</td></tr>
+</table>
+<p style="font-size:34px;line-height:1.4;color:#45535F;width:1560px">Memória é quem você é. Roadmap é onde você está. Spec é para onde vai. Skill é como se faz.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Nesta ordem — skill primeiro vira gerador de código rápido e errado</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Esta é a tabela que amarra o treinamento. Volte a ela entre os módulos. A ordem não é estética: sem spec e sem roadmap, a skill só acelera o erro.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">04 / 21 &middot; <code>loop</code></p>
+<div class="quadro">
+<section id="loop" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">O agente trabalha em laço</h2>
+<p style="font-size:32px;line-height:1.4;color:#45535F;width:1400px">Ele não “sabe” o projeto: lê o que cabe na janela, decide, age, lê o resultado e decide de novo.</p>
+</div>
+<div style="display:flex;align-items:center;gap:0">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">01</p>
+<h3 style="font-size:34px;font-weight:600">Lê o contexto</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Memória, spec, arquivos que você apontou</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">02</p>
+<h3 style="font-size:34px;font-weight:600">Decide</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Com o que leu — não com o que você sabe</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">03</p>
+<h3 style="font-size:34px;font-weight:600">Usa ferramenta</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Lê arquivo, edita, roda build e teste</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">04</p>
+<h3 style="font-size:34px;font-weight:600">Lê o resultado</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">E volta ao passo 2, agora com mais ruído</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4;color:#101D2C;width:1560px"><b>Erro no passo 1 se propaga até o fim.</b> É por isso que investimos no começo — spec e memória — e não em corrigir depois.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Tudo que ele lê, roda e responde ocupa a mesma janela</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Aqui cabe a demonstração: rode um pedido num repositório sem AGENTS.md e depois com as skills no lugar. A diferença é o treinamento inteiro em miniatura.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">05 / 21 &middot; <code>memoria</code></p>
+<div class="quadro">
+<section id="memoria" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">Memória · 1 de 4</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">As seções do <span style="color:#E0A94A">sysenota/CLAUDE.md</span></h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600">Contexto geral</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Qual é a fonte da verdade e onde ela fica no disco</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600">Obrigatório antes de implementar</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Ponteiro para os templates — não o conteúdo deles</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600">Decisões já tomadas</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Com o porquê e a armadilha concreta, em código</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600">Funcionalidades prontas</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Tabela de API, front e permissão</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600">Arquivos-chave</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Onde mexer para cada tipo de mudança</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#2A1E10;padding:32px;border:1px solid #6B4C1C;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#E0A94A">Regras que nunca podem ser quebradas</h3>
+<p style="font-size:24px;line-height:1.4;color:#EBD6B0">Banco compartilhado, coluna nova sempre nula, caixa das tabelas</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">Imperativo e verificável · toda regra carrega a razão · muda no mesmo commit</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Abra o arquivo de verdade na tela. Pare no caso do java.sql.Date com @Temporal(DATE), que estoura em toInstant(): é uma armadilha que custou tempo e hoje está escrita. Pare também na regra do banco compartilhado com o legado e com o importador nacional — é o melhor exemplo de regra que não se negocia.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">06 / 21 &middot; <code>memoria-magro</code></p>
+<div class="quadro">
+<section id="memoria-magro" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Magro não é pobre: é o endereço certo</h2>
+<div style="display:flex;gap:40px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FDFDFB;padding:48px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#6A7179">sysenota/CLAUDE.md</p>
+<p style="font-size:104px;font-weight:700;line-height:1.05;color:#2E6FB7">174 linhas</p>
+<p style="font-size:28px;line-height:1.4;color:#45535F">Projeto em migração, banco compartilhado com dois outros sistemas, dezenas de regras de paridade. O contexto <b>é</b> o trabalho.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FDFDFB;padding:48px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#6A7179">sysepesquisa/CLAUDE.md</p>
+<p style="font-size:104px;font-weight:700;line-height:1.05;color:#B5751F">5 linhas</p>
+<p style="font-size:28px;line-height:1.4;color:#45535F">“Leia e siga o <b>AGENTS.md</b>. As skills canônicas ficam em <span style="color:#101D2C">.agents/skills/</span>; em caso de divergência, prevalece essa pasta.”</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4;color:#101D2C;width:1560px">Este arquivo entra em <b>toda</b> sessão. Conteúdo grande vira arquivo apontado; o que é comportamento automático vira <i>hook</i>, não instrução.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Divulgação progressiva: pague o custo só quando a tarefa pedir</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>O contraste é a aula. Os dois estão certos, porque resolvem problemas diferentes. O erro é o meio: um CLAUDE.md de 600 linhas com template de código dentro, pago em toda sessão, inclusive para corrigir um typo.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">07 / 21 &middot; <code>roadmap</code></p>
+<div class="quadro">
+<section id="roadmap" data-transition="push" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#2E6FB7;letter-spacing:4px;text-transform:uppercase">Roadmap · 2 de 4</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Não é quadro de tarefas: é o estado do projeto</h2>
+</div>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:28px;color:#2B3A47;border:1px solid #D7DBD8;padding:18px 22px">
+<tr><th style="width:10%;text-align:left;font-weight:700;color:#101D2C">ID</th><th style="width:38%;text-align:left;font-weight:700;color:#101D2C">Item</th><th style="width:14%;text-align:left;font-weight:700;color:#101D2C">Status</th><th style="width:38%;text-align:left;font-weight:700;color:#101D2C">Evidência / nota</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">P03</td><td>Remessa de DAM (CNAB 240/400)</td><td style="color:#1C6B3A">[x] feito</td><td>19/10: arquivo igual ao do legado byte a byte, menos a hora do cabeçalho</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">F02</td><td>Livro Fiscal com paridade de PDF</td><td style="color:#B5751F">[-] andando</td><td>16/10: 8 cenários passam; falta o livro “Bancos”</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">F05</td><td>PIX BB testado</td><td style="color:#6A7179">[ ] pendente</td><td>Depende do ambiente de homologação do BB (Q3)</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace">P01</td><td>Importação nacional de NFS-e</td><td style="color:#A32A2A">[!] risco</td><td>Segredos versionados no repositório do importador</td></tr>
+</table>
+<div style="display:flex;gap:28px">
+<p style="flex:1;font-size:26px;line-height:1.4;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#101D2C">ID estável.</b> “Implemente o D06” é melhor que “faz o PIX do BB”.</p>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#101D2C">Legenda explícita.</b> Quatro estados, inclusive o de risco aberto.</p>
+<p style="flex:1;font-size:26px;line-height:1.4;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#101D2C">Data na evidência.</b> Sem data, ninguém sabe se ainda vale.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Divergência do legado só de propósito — e registrada aqui</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Mostre o ROADMAP.md do sysenota aberto. O que faz esse arquivo funcionar é a última coluna: cada [x] aponta para um teste, um arquivo gerado ou uma comparação feita. Sem isso o roadmap vira ficção em duas semanas.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">08 / 21 &middot; <code>roadmap-evidencia</code></p>
+<div class="quadro">
+<section id="roadmap-evidencia" data-transition="fade" style="background:#1C4C7C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<h2 style="font-size:104px;font-weight:700;line-height:1.1;width:1540px">Status sem evidência é opinião.</h2>
+<p style="font-size:36px;line-height:1.4;color:#DCEAF7;width:1400px">Mudou de <span style="color:#F2D18A">[ ]</span> para <span style="color:#F2D18A">[x]</span>? Cite a prova: o teste que rodou, o arquivo que saiu igual, a comparação que foi feita. É isso que deixa outra pessoa — ou outra sessão — retomar o trabalho amanhã.</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Este é o combinado mais barato de adotar e o que mais muda a qualidade do roadmap. Proponha aqui: ninguém marca [x] sem uma linha de evidência com data.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">09 / 21 &middot; <code>spec-acervo</code></p>
+<div class="quadro">
+<section id="spec-acervo" data-transition="push" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#2E6FB7;letter-spacing:4px;text-transform:uppercase">Spec · 3 de 4</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">A numeração é a narrativa</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:40px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#6A7179">syscomm/.spec/</p>
+<ul style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.65;color:#2B3A47">
+<li>000-baseline-inventario</li>
+<li>001-modernizacao-api-java-spring</li>
+<li>002-modelo-usuario-permissoes</li>
+<li>003-auth-jwt-api</li>
+<li>004-login-web</li>
+<li>005-guards-interceptors-permissoes</li>
+<li>013-divergencias-delphi</li>
+<li style="color:#B5751F">017-continuidade-do-trabalho</li>
+<li>019-homologacao</li>
+<li>023-usabilidade</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:34px;line-height:1.4;color:#101D2C"><b>24 documentos, em ordem de dependência.</b> Quem chega depois lê na sequência e entende a modernização inteira sem precisar da conversa.</p>
+<p style="font-size:30px;line-height:1.5;color:#45535F">O inventário vem antes da API. A API antes do modelo de usuário. O modelo antes do JWT. O JWT antes do login. Nenhum número é decorativo — e <b>nunca se renumera</b>.</p>
+<p style="font-size:30px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">No SysEPesquisa o mesmo papel é feito por um par de arquivos: <b>plano</b> (visão e fases, negociável) e <b>especificação</b> (contrato detalhado).</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Nenhuma linha de código antes de a spec dizer o que é “pronto”</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Role a pasta .spec do syscomm na tela. O efeito de ver 24 arquivos numerados é maior que qualquer slide. Depois abra a 013-divergencias-delphi para mostrar que até as regras deliberadamente não portadas estão escritas, com o motivo.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">10 / 21 &middot; <code>spec-pronto</code></p>
+<div class="quadro">
+<section id="spec-pronto" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">§0 — Objetivo e critério de pronto</h2>
+<p style="font-size:30px;line-height:1.4;color:#BFD3E8;width:1560px;font-family:'JetBrains Mono', 'Courier New', monospace">sysenota/.spec/001-escrituracao-livro-dam-pix.spec.md</p>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;gap:28px;align-items:center;background:#172B3D;padding:32px 40px;border:1px solid #2A4257;border-radius:16px">
+<p style="font-size:56px;font-weight:700;color:#7FB2E8;width:60px">1</p>
+<p style="font-size:30px;line-height:1.4;color:#E6EFF8">Cada regra conferida contra o fonte do legado — status ✅ ou divergência registrada no ROADMAP</p>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#172B3D;padding:32px 40px;border:1px solid #2A4257;border-radius:16px">
+<p style="font-size:56px;font-weight:700;color:#7FB2E8;width:60px">2</p>
+<p style="font-size:30px;line-height:1.4;color:#E6EFF8">A suíte Playwright da §6 passando inteira na pilha local</p>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#172B3D;padding:32px 40px;border:1px solid #2A4257;border-radius:16px">
+<p style="font-size:56px;font-weight:700;color:#7FB2E8;width:60px">3</p>
+<p style="font-size:30px;line-height:1.4;color:#E6EFF8">As 3 massas de teste da CAIXA geradas no sandbox, com barra e QR coerentes</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4;color:#E0A94A;width:1560px">O teste: um terceiro consegue conferir isso sem perguntar nada a você?</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">Legenda por regra: ⬜ a conferir · ✅ igual ao legado · ⚠️ divergência · ❌ falta</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Exercício do bloco: cada dupla escreve a §0 de uma feature real do backlog. Três condições, todas verificáveis. Leitura em voz alta e crítica cruzada com a pergunta do slide.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">11 / 21 &middot; <code>spec-retomada</code></p>
+<div class="quadro">
+<section id="spec-retomada" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">O documento de retomada</h2>
+<p style="font-size:32px;line-height:1.4;color:#45535F;width:1560px">“Serve para quem chega sem o histórico da conversa — outra pessoa, outra IA, ou a mesma sessão depois de perder o contexto.”</p>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Hierarquia das fontes da verdade</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 20px">
+<tr><th style="width:34%;text-align:left;font-weight:700;color:#101D2C">Fonte</th><th style="width:66%;text-align:left;font-weight:700;color:#101D2C">Papel</th></tr>
+<tr><td>Delphi</td><td><b>árbitro</b> — é o que roda em produção</td></tr>
+<tr><td>Angular 8</td><td>inventário de campos, <b>não</b> de regras</td></tr>
+<tr><td>Banco</td><td>confirma volume e uso real</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F">E quando o Delphi e o banco divergem: <b>meça antes de decidir</b>.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Armadilhas do ambiente, escritas</h3>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">O <span style="color:#101D2C">deploy-web.sh</span> não usa <span style="color:#101D2C">set -e</span>: já ecoou sucesso sem publicar. Confira o bundle servido.</p>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">Não compare timestamp do container (UTC) com o do Windows (BRT). <b>Já gerou falso alarme duas vezes.</b></p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">syscomm/.spec/017-continuidade-do-trabalho.spec.md</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Este é o truque mais transferível do método. Toda dor que custou meia tarde de depuração vira três linhas aqui — e nunca mais custa. Pergunte ao time: qual armadilha do nosso ambiente ainda não está escrita em lugar nenhum?</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">12 / 21 &middot; <code>skill-anatomia</code></p>
+<div class="quadro">
+<section id="skill-anatomia" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">Skill · 4 de 4</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Padrão de projeto executável</h2>
+</div>
+<div style="display:flex;gap:48px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#172B3D;padding:40px;border:1px solid #2A4257;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#8FA3B8">~/.claude/skills/sysetemplate-migrar-jsf/</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;gap:24px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#E6EFF8">SKILL.md</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#7FB2E8">143 linhas</p></div>
+<div style="display:flex;justify-content:space-between;gap:24px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#E6EFF8">references/api-templates.md</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E0A94A">348 linhas</p></div>
+<div style="display:flex;justify-content:space-between;gap:24px"><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;color:#E6EFF8">references/web-templates.md</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;font-weight:700;color:#E0A94A">1554 linhas</p></div>
+</div>
+<p style="font-size:26px;line-height:1.5;color:#BFD3E8">O processo é curto. O código-padrão é enorme — e só entra no contexto quando a tarefa pede.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:28px">
+<h3 style="font-size:38px;font-weight:600;color:#E0A94A">Por que isso importa em dinheiro</h3>
+<p style="font-size:30px;line-height:1.5;color:#E6EFF8">Se as 1554 linhas de template Angular estivessem no <span style="font-family:'JetBrains Mono', 'Courier New', monospace">CLAUDE.md</span>, você pagaria por elas em <b>toda</b> sessão — inclusive para corrigir um typo.</p>
+<p style="font-size:30px;line-height:1.5;color:#E6EFF8">E o conteúdo que faz a skill valer é conhecimento sênior destilado: a tabela que traduz <span style="font-family:'JetBrains Mono', 'Courier New', monospace">@ManagedBean</span> em <span style="font-family:'JetBrains Mono', 'Courier New', monospace">@Service</span>, <span style="font-family:'JetBrains Mono', 'Courier New', monospace">@ViewScoped</span> em estado no Angular, <span style="font-family:'JetBrains Mono', 'Courier New', monospace">FacesMessage</span> em <span style="font-family:'JetBrains Mono', 'Courier New', monospace">ToastService</span>.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">Uma skill por tipo de tarefa: bootstrap · novo-endpoint · nova-feature — e são cumulativas</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Mostre a tabela de tradução JSF → Spring/Angular aberta. Destaque a dica crucial: em JSF o estado fica no bean; no novo modelo fica no Angular e a API é stateless. Essa frase evita uma classe inteira de erro que compila.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">13 / 21 &middot; <code>skill-gatilho</code></p>
+<div class="quadro">
+<section id="skill-gatilho" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">A <span style="color:#2E6FB7">description</span> é o gatilho</h2>
+<div style="display:flex;flex-direction:column;gap:12px;background:#101D2C;padding:48px;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;line-height:1.6;color:#E6EFF8">description: &gt;</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:28px;line-height:1.6;color:#BFD3E8">Ative sempre que o usuário mencionar: <span style="color:#E0A94A">“migrar JSF”</span>, <span style="color:#E0A94A">“converter tela JSF”</span>, <span style="color:#E0A94A">“migrar ManagedBean”</span>, <span style="color:#E0A94A">“portar funcionalidade do sistema antigo”</span>… Mesmo que o usuário não cite “sysetemplate” explicitamente — se há código JSF legado para transformar, use este skill.</p>
+</div>
+<div style="display:flex;gap:40px">
+<p style="flex:1;font-size:32px;line-height:1.45;color:#45535F"><b style="color:#101D2C">Ela não descreve a skill para humano.</b> Ela lista as palavras que o dev vai digitar — e a condição objetiva que caracteriza a tarefa.</p>
+<p style="flex:1;font-size:32px;line-height:1.45;color:#45535F"><b style="color:#B5751F">Descrição vaga = skill que nunca dispara.</b> O dev conclui que “não funciona” e volta a copiar e colar código à mão.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Teste de aceitação da skill: digitar uma frase do gatilho e ver se ela dispara</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Ponto prático do exercício: depois de escrever a skill, abrir uma sessão e testar o gatilho. Se não disparou, o problema é a descrição, não o conteúdo.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">14 / 21 &middot; <code>skill-script</code></p>
+<div class="quadro">
+<section id="skill-script" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Se é mecânico, a skill entrega um script</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FDFDFB;padding:40px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;color:#6A7179">sysetemplate-tema-claro-escuro/scripts/</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:30px;color:#101D2C">migrar-cores.cjs</p>
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:30px;color:#101D2C">capturas-tema.cjs</p>
+<p style="font-size:28px;line-height:1.5;color:#45535F">Trocar 200 cores <span style="font-family:'JetBrains Mono', 'Courier New', monospace">#hex</span> por variáveis é trabalho determinístico: um script faz certo, barato e <b>igual toda vez</b>.</p>
+<p style="font-size:28px;line-height:1.5;color:#45535F">O modelo decide <b>quando</b> rodar. O script garante <b>como</b>.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:34px;font-weight:600">Onde cada skill mora</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 20px">
+<tr><th style="width:44%;text-align:left;font-weight:700;color:#101D2C">Local</th><th style="width:56%;text-align:left;font-weight:700;color:#101D2C">Escopo</th></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">~/.claude/skills/</td><td>todos os seus projetos</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">projeto/.claude/skills/</td><td>só aquele repo, versionado com ele</td></tr>
+<tr><td style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px">projeto/.agents/skills/</td><td>canônico, multiferramenta</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px">No SysEPesquisa, <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.agents/skills/</span> é a fonte e <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.claude/skills/</span> é espelho. É a resposta pronta para “e quem usa outra ferramenta de IA?”.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Regra: fiz isto três vezes à mão? então deveria existir uma skill</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Exercício central do dia: cada dupla escreve uma skill pequena de algo que o time já repete à mão. Entregável: SKILL.md com gatilho, passos numerados e um arquivo em references/. Testar na própria máquina antes de encerrar.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">15 / 21 &middot; <code>tokens-sessao</code></p>
+<div class="quadro">
+<section id="tokens-sessao" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">Economia</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Por que a sessão “piora” depois de uma hora</h2>
+</div>
+<div style="display:flex;align-items:center;gap:0">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#172B3D;padding:36px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600">A janela enche</h3>
+<p style="font-size:26px;line-height:1.4;color:#BFD3E8">Cada arquivo lido, cada log de build, cada resposta</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#6B7F93;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#172B3D;padding:36px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600">O histórico é resumido</h3>
+<p style="font-size:26px;line-height:1.4;color:#BFD3E8">Para continuar caberia; o resumo é mais curto</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#6B7F93;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2A1E10;padding:36px;border:1px solid #6B4C1C;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#E0A94A">O resumo perde detalhe</h3>
+<p style="font-size:26px;line-height:1.4;color:#EBD6B0">E lá vai a decisão que vocês tomaram há 40 minutos</p>
+</div>
+</div>
+<p style="font-size:38px;line-height:1.4;width:1560px">Sessão longa é sintoma, não troféu. O que preserva conhecimento entre sessões <b style="color:#E0A94A">não é o histórico — é o arquivo</b>.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">É exatamente para isso que existe a spec 017</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Feche o laço com o módulo de specs: o documento de retomada é a solução de engenharia para um limite da ferramenta. Quem entende isso para de brigar com a janela de contexto.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">16 / 21 &middot; <code>tokens-habitos</code></p>
+<div class="quadro">
+<section id="tokens-habitos" style="background:#f7f7f2">
+  <p id="e1-wbdn3e" style="position:absolute; bottom:64px; left:128px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#6a7179">Log de build inteiro no contexto é dinheiro queimado sem informação nova</p>
+  <h2 id="pb5e819c837bbr0-65ac2930" style="position:absolute; top:128px; left:128px; width:1665px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.15; color:#101d2c">Oito hábitos que economizam de verdade</h2>
+  <div id="pb5e819c837bbr1-65ac2930" style="position:absolute; top:251px; left:128px; width:1665px; height:512px; display:grid; gap:28px; grid-template-columns:1fr 1fr 1fr 1fr">
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#2e6fb7">01</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Uma tarefa, uma sessão</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">O conhecimento ficou no roadmap</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#2e6fb7">02</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Aponte o arquivo</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Não “o backend”, não a pasta</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#2e6fb7">03</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Magro com ponteiros</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Memória e skill curtas, anexos sob demanda</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#2e6fb7">04</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Script no mecânico</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Determinístico não se pede, se roda</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#b5751f">05</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Plano antes do código</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Revisar 20 linhas custa centavos</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#b5751f">06</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Subagente para busca</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Volta a conclusão, não os arquivos</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#b5751f">07</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Saída enxuta</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">mvn -q, reporter=line, head e grep no log</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; padding:32px; background:#fdfdfb; border:1px solid #d7dbd8; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; font-weight:700; color:#b5751f">08</p>
+      <h3 style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; font-weight:600; color:#101d2c">Não cole o que está em disco</h3>
+      <p style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; line-height:1.4; color:#45535f">Dê o caminho</p>
+    </div>
+  </div>
+  <p id="pb5e819c837bbr2-65ac2930" style="position:absolute; top:802px; left:128px; width:1560px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:32px; line-height:1.4; color:#45535f">Nenhum deles é sobre “escrever prompt melhor”. Todos são sobre <span style="color:#101d2c"><b>o que entra na janela</b></span>.</p>
+  </section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Peça um exemplo de cada um na prática do time. O 07 costuma ser o mais ignorado: um build Maven verboso pode custar mais que a tarefa inteira.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">17 / 21 &middot; <code>modelos</code></p>
+<div class="quadro">
+<section id="modelos" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Qual modelo, para quê</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:3;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Dentro do Claude Code</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:28px;color:#2B3A47;border:1px solid #D7DBD8;padding:18px 22px">
+<tr><th style="width:32%;text-align:left;font-weight:700;color:#101D2C">Modelo</th><th style="width:68%;text-align:left;font-weight:700;color:#101D2C">Situação</th></tr>
+<tr><td><b>Opus 5.5</b></td><td>Arquitetura, regra crítica do legado, depuração difícil, revisão</td></tr>
+<tr><td><b>Sonnet 5.5</b></td><td>Implementação rotineira dentro de uma spec já escrita</td></tr>
+<tr><td><b>Haiku 5.5</b></td><td>Mecânico em volume, classificação, busca, renomeação</td></tr>
+</table>
+<p style="font-size:28px;line-height:1.5;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#B5751F">O erro comum é o oposto do esperado:</b> gastar pouco onde a decisão é caríssima — desenho de arquitetura, paridade com o legado — e muito onde não muda nada.</p>
+</div>
+<div style="flex:2;display:flex;flex-direction:column;gap:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">IA dentro do produto</h3>
+<table style="font-family:'IBM Plex Sans', Arial, sans-serif;font-size:26px;color:#2B3A47;border:1px solid #D7DBD8;padding:16px 18px">
+<tr><th style="width:44%;text-align:left;font-weight:700;color:#101D2C">Por 1M tokens</th><th style="width:28%;text-align:right;font-weight:700;color:#101D2C">entra</th><th style="width:28%;text-align:right;font-weight:700;color:#101D2C">sai</th></tr>
+<tr><td>Haiku 5.5</td><td style="text-align:right">US$ 0,10</td><td style="text-align:right">US$ 0,50</td></tr>
+<tr><td>Sonnet 5.5</td><td style="text-align:right">US$ 2,00</td><td style="text-align:right">US$ 10,00</td></tr>
+<tr><td>Opus 5.5</td><td style="text-align:right">US$ 4,00</td><td style="text-align:right">US$ 20,00</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.5;color:#45535F">Três alavancas, nesta ordem: <b>cache do prefixo estável</b>, <b>modelo por rota</b>, <b>lote</b> para o que não é interativo.</p>
+<p style="font-size:26px;line-height:1.5;color:#45535F">Mas o mais barato é <b>não chamar</b>: o SysEPesquisa já barra a geração pelo plano antes de gastar token.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Preços de 19/10/2026 · confirme antes de usar em proposta comercial</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Conecte com o plano-ia.md: hoje o SysEPesquisa chama gpt-4o-mini. A conversa de custo por tenant é a mesma, muda a tabela. Lembre que qualquer byte que mude no prefixo invalida o cache — um timestamp no system prompt é o assassino clássico.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">18 / 21 &middot; <code>rag-catalogo</code></p>
+<div class="quadro">
+<section id="rag-catalogo" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">RAG</p>
+<h2 style="font-size:68px;font-weight:600;line-height:1.15">O catálogo semântico do SysEPesquisa</h2>
+</div>
+<p style="font-size:32px;line-height:1.45;color:#BFD3E8;width:1600px">“A IA propõe uma consulta; parser, catálogo, executor read-only e limites do backend decidem se ela pode ser executada.” Perguntas livres sobre dados agregados, <b style="color:#F7F7F2">sem dar o banco para a IA</b>.</p>
+<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:28px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Tabelas e colunas na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">Cinco tabelas, colunas nomeadas uma a uma, com sinônimos: “questionário” e “levantamento” caem em <span style="font-family:'JetBrains Mono', 'Courier New', monospace">pesquisa</span></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Joins na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">Seis caminhos permitidos. Outras combinações são rejeitadas <b>mesmo quando as duas tabelas são permitidas</b></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">Funções na allowlist</h3>
+<p style="font-size:25px;line-height:1.45;color:#BFD3E8">COUNT, SUM, AVG, MIN, MAX — e nada além disso</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#2A1E10;padding:32px;border:1px solid #6B4C1C;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#E0A94A">Fora de escopo, explícito</h3>
+<p style="font-size:25px;line-height:1.45;color:#EBD6B0">Resposta aberta individual, usuários, login, tokens, faturamento, logs de IA, qualquer tabela não listada</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">sysepesquisa/docs/catalogo-semantico-consultas-ia.md</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Note que “fora de escopo” é tão detalhado quanto a allowlist. É isso que torna o documento auditável por alguém de fora — e defensável numa conversa sobre LGPD.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">19 / 21 &middot; <code>rag-padroes</code></p>
+<div class="quadro">
+<section id="rag-padroes" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<h2 style="font-size:68px;font-weight:600;line-height:1.15">RAG não é jogar documento no vetor.<br>É decidir o que o modelo pode ver — e o que pode fazer com isso.</h2>
+<div style="display:flex;gap:28px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Catálogo + consulta validada</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Dado estruturado, pergunta analítica</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Hoje:</b> catálogo semântico do SysEPesquisa</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Busca semântica</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Texto livre, muito volume, pergunta vaga</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Candidatos:</b> respostas abertas, documentos de protocolo</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDF6E8;padding:36px;border:1px solid #D9C08A;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#B5751F">Contexto curado à mão</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Poucos documentos, alto valor</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Vocês já fazem:</b> os <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.spec/</span> e o <span style="font-family:'JetBrains Mono', 'Courier New', monospace">CLAUDE.md</span></p>
+</div>
+</div>
+<div style="display:flex;gap:28px">
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F">E o harness obrigatório para qualquer feature de IA: <b style="color:#101D2C">sanitizar a entrada</b>, <b style="color:#101D2C">validar a saída com código</b>, <b style="color:#101D2C">cobrar cota antes da chamada</b>, <b style="color:#101D2C">auditar por tenant</b>, <b style="color:#101D2C">mascarar PII</b>.</p>
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F">O modelo <b style="color:#101D2C">propõe</b>; o código <b style="color:#101D2C">decide</b>. Essa inversão é o que separa demo de produto.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">A terceira coluna é o momento “ah, entendi” do treinamento</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Faça a ligação em voz alta: o que vocês fazem com CLAUDE.md e .spec é RAG manual de desenvolvimento. Mesma decisão — o que o modelo vê — resolvida com arquivo em vez de vetor.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">20 / 21 &middot; <code>qualidade</code></p>
+<div class="quadro">
+<section id="qualidade" data-transition="push" style="background:#101D2C;color:#F7F7F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;font-weight:700;color:#7FB2E8;letter-spacing:4px;text-transform:uppercase">Qualidade</p>
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">Hierarquia de confiança</h2>
+</div>
+<div style="display:flex;align-items:center;gap:0">
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#8FA3B8">Compila</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Não prova nada sobre a regra</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:48px;color:#6B7F93;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#172B3D;padding:32px;border:1px solid #2A4257;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#BFD3E8">Teste unitário</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Prova o cálculo isolado</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:48px;color:#6B7F93;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#172B3D;padding:32px;border:1px solid #4A6B8A;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#7FB2E8">E2E na pilha local</h3>
+<p style="font-size:24px;line-height:1.4;color:#BFD3E8">Prova o fluxo de verdade</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:48px;color:#6B7F93;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:8px;background:#2A1E10;padding:32px;border:1px solid #6B4C1C;border-radius:16px">
+<h3 style="font-size:30px;font-weight:600;color:#E0A94A">Igual ao legado</h3>
+<p style="font-size:24px;line-height:1.4;color:#EBD6B0">Byte a byte, pixel a pixel</p>
+</div>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:26px;line-height:1.7;color:#BFD3E8">remessa.legado.spec.ts<br>livro-fiscal.legado.spec.ts<br>pix-caixa.legado.spec.ts<br>baixa-retorno.legado.spec.ts</p>
+</div>
+<p style="flex:1;font-size:36px;line-height:1.35;color:#F7F7F2"><b style="color:#E0A94A">O agente não declara pronto. O teste declara.</b> O que ele diz sobre o próprio trabalho é hipótese até alguém rodar.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#8FA3B8;font-family:'JetBrains Mono', 'Courier New', monospace">E o git é seu: commit e push são do time, não do agente</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>O nome do arquivo de teste já diz o que ele prova — esse é um detalhe de padrão que vale copiar. Mostre o status honesto do plano-ia.md: “código concluído = implementado e compilando; ainda sem teste ponta a ponta”. Status honesto em vez de ✅ generoso.</div>
+</article>
+
+<article class="pagina">
+<p class="rotulo">21 / 21 &middot; <code>combinados</code></p>
+<div class="quadro">
+<section id="combinados" data-transition="fade" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">O que sai daqui escrito</h2>
+<div style="display:flex;gap:40px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:34px;font-weight:600;color:#2E6FB7">Antes de pedir código</h3>
+<ul style="font-size:30px;line-height:1.7;color:#2B3A47">
+<li>A spec diz o que é “pronto”?</li>
+<li>A regra do legado foi conferida na fonte?</li>
+<li>A skill certa existe? Se já fiz três vezes à mão, deveria existir</li>
+<li>O pedido é análise ou implementação? Diga qual</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:34px;font-weight:600;color:#B5751F">Os combinados do time</h3>
+<ul style="font-size:30px;line-height:1.7;color:#2B3A47">
+<li>Quem é dono do <span style="font-family:'JetBrains Mono', 'Courier New', monospace">CLAUDE.md</span> de cada repo</li>
+<li>Quais três skills o time cria no primeiro mês</li>
+<li>Qual é a definição de pronto na Supridata</li>
+<li>Nenhum <span style="font-family:'JetBrains Mono', 'Courier New', monospace">[x]</span> sem evidência com data</li>
+</ul>
+</div>
+</div>
+<div style="display:flex;gap:28px">
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#101D2C">Laboratório:</b> pegue um item pendente do roadmap, escreva a §0, implemente com a skill, rode o teste, volte a evidência para o roadmap.</p>
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F;background:#FDFDFB;padding:28px;border:1px solid #D7DBD8;border-radius:16px"><b style="color:#101D2C">Avaliação:</b> não é “funcionou?”. É <b>outra pessoa consegue retomar isso amanhã lendo só os arquivos?</b></p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Revisão em duas semanas, sobre as skills que o time escreveu de verdade</p>
+</section>
+</div>
+<div class="nota"><b>Nota do apresentador</b><br>Não termine com aplausos: termine com os combinados preenchidos num arquivo, no repositório deles. Marque a sessão de revisão de 1h antes de todos saírem da sala — é onde o padrão pega ou morre.</div>
+</article>
+
+<script>
+  // Ajusta a escala a largura da janela, sem passar de 1:1.
+  const ajustar = () => {
+    const disponivel = document.body.clientWidth - 48;
+    const escala = Math.min(1, Math.max(0.25, disponivel / 1920));
+    document.documentElement.style.setProperty('--escala', escala.toFixed(4));
+  };
+  window.addEventListener('resize', ajustar);
+  ajustar();
+</script>
+</body>
+</html>

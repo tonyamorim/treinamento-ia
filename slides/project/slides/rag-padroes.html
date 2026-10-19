@@ -1,0 +1,26 @@
+<section id="rag-padroes" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:40px">
+<h2 style="font-size:68px;font-weight:600;line-height:1.15">RAG não é jogar documento no vetor.<br>É decidir o que o modelo pode ver — e o que pode fazer com isso.</h2>
+<div style="display:flex;gap:28px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Catálogo + consulta validada</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Dado estruturado, pergunta analítica</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Hoje:</b> catálogo semântico do SysEPesquisa</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#2E6FB7">Busca semântica</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Texto livre, muito volume, pergunta vaga</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Candidatos:</b> respostas abertas, documentos de protocolo</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDF6E8;padding:36px;border:1px solid #D9C08A;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#B5751F">Contexto curado à mão</h3>
+<p style="font-size:26px;line-height:1.45;color:#45535F">Poucos documentos, alto valor</p>
+<p style="font-size:26px;line-height:1.45;color:#101D2C"><b>Vocês já fazem:</b> os <span style="font-family:'JetBrains Mono', 'Courier New', monospace">.spec/</span> e o <span style="font-family:'JetBrains Mono', 'Courier New', monospace">CLAUDE.md</span></p>
+</div>
+</div>
+<div style="display:flex;gap:28px">
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F">E o harness obrigatório para qualquer feature de IA: <b style="color:#101D2C">sanitizar a entrada</b>, <b style="color:#101D2C">validar a saída com código</b>, <b style="color:#101D2C">cobrar cota antes da chamada</b>, <b style="color:#101D2C">auditar por tenant</b>, <b style="color:#101D2C">mascarar PII</b>.</p>
+<p style="flex:1;font-size:28px;line-height:1.45;color:#45535F">O modelo <b style="color:#101D2C">propõe</b>; o código <b style="color:#101D2C">decide</b>. Essa inversão é o que separa demo de produto.</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">A terceira coluna é o momento “ah, entendi” do treinamento</p>
+<aside>Faça a ligação em voz alta: o que vocês fazem com CLAUDE.md e .spec é RAG manual de desenvolvimento. Mesma decisão — o que o modelo vê — resolvida com arquivo em vez de vetor.</aside>
+</section>

@@ -1,0 +1,34 @@
+<section id="loop" style="background:#F7F7F2;color:#101D2C;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="font-size:72px;font-weight:600;line-height:1.15">O agente trabalha em laço</h2>
+<p style="font-size:32px;line-height:1.4;color:#45535F;width:1400px">Ele não “sabe” o projeto: lê o que cabe na janela, decide, age, lê o resultado e decide de novo.</p>
+</div>
+<div style="display:flex;align-items:center;gap:0">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">01</p>
+<h3 style="font-size:34px;font-weight:600">Lê o contexto</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Memória, spec, arquivos que você apontou</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">02</p>
+<h3 style="font-size:34px;font-weight:600">Decide</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Com o que leu — não com o que você sabe</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">03</p>
+<h3 style="font-size:34px;font-weight:600">Usa ferramenta</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">Lê arquivo, edita, roda build e teste</p>
+</div>
+<x-connector head="end" head-end="filled" style="width:56px;color:#9AA4AE;border-width:3px"></x-connector>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FDFDFB;padding:36px;border:1px solid #D7DBD8;border-radius:16px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;font-weight:700;color:#2E6FB7">04</p>
+<h3 style="font-size:34px;font-weight:600">Lê o resultado</h3>
+<p style="font-size:24px;line-height:1.4;color:#45535F">E volta ao passo 2, agora com mais ruído</p>
+</div>
+</div>
+<p style="font-size:34px;line-height:1.4;color:#101D2C;width:1560px"><b>Erro no passo 1 se propaga até o fim.</b> É por isso que investimos no começo — spec e memória — e não em corrigir depois.</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#6A7179;font-family:'JetBrains Mono', 'Courier New', monospace">Tudo que ele lê, roda e responde ocupa a mesma janela</p>
+<aside>Aqui cabe a demonstração: rode um pedido num repositório sem AGENTS.md e depois com as skills no lugar. A diferença é o treinamento inteiro em miniatura.</aside>
+</section>

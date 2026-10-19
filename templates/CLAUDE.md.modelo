@@ -1,0 +1,89 @@
+# Diretrizes do projeto <NOME>
+
+<!--
+MODELO — padrão Supridata (extraído de sysenota/CLAUDE.md e sysepesquisa/AGENTS.md).
+Regras de ouro ao preencher:
+  1. Magro. Se o conteúdo for grande (templates de código, catálogo), crie um arquivo
+     e APONTE para ele aqui. Este arquivo entra em toda sessão: tudo aqui custa contexto.
+  2. Imperativo e verificável. "Coluna nova sempre NULL ou com DEFAULT", não "cuidado com o banco".
+  3. Toda regra carrega o PORQUÊ. Sem a razão, a regra é negociada.
+  4. Comportamento automático (lint, bloqueio de commit) NÃO vem para cá: vai em hook no settings.json.
+  5. Mudou uma decisão? Este arquivo muda no mesmo commit.
+Apague estes comentários antes de usar.
+-->
+
+## Contexto geral
+
+<O que é o projeto em 3 linhas. Qual é a FONTE DA VERDADE das regras de negócio
+(legado? banco? documento?) e onde ela fica no disco.>
+
+---
+
+## OBRIGATÓRIO antes de qualquer implementação
+
+Antes de criar ou modificar qualquer arquivo de código, leia:
+
+- <caminho do template/skill de referência da API>
+- <caminho do template/skill de referência do front>
+
+Todo código gerado deve seguir esses templates exatamente.
+
+---
+
+## Estrutura do projeto
+
+```
+<projeto>-api/   → <stack>, porta <n>
+<projeto>-web/   → <stack>, porta <n>
+```
+
+- **Package raiz API:** `com.supridata.<projeto>`
+- **Base URL no front:** `environment.apiUrl`
+- **Banco:** <qual, versão, compartilhado com quem>
+
+---
+
+## Decisões técnicas já tomadas
+
+### <Assunto>
+- <A decisão.>
+- <Por que, em uma linha.>
+- <A armadilha concreta, com código quando for o caso.>
+
+---
+
+## Funcionalidades já prontas
+
+| Funcionalidade | API | Front | Permissão |
+|---|---|---|---|
+| | | | |
+
+---
+
+## Arquivos-chave para novas funcionalidades
+
+### API
+- `<arquivo>` — <o que é e quando mexer>
+
+### Front
+- `<arquivo>` — <o que é e quando mexer>
+
+---
+
+## Regras que nunca podem ser quebradas
+
+### <Tema (ex.: banco compartilhado, compatibilidade, segurança)>
+- <Regra imperativa.> — <razão>
+- <Regra imperativa.> — <razão>
+
+---
+
+## Fluxo de trabalho
+
+1. Spec antes de código: nenhuma implementação começa sem critério de pronto escrito
+   em `.spec/NNN-<tema>.spec.md`.
+2. Atualize spec e `ROADMAP.md` do mesmo tema **antes** do código; registre ao final apenas
+   os testes **realmente executados**.
+3. Não implemente código quando o pedido for somente análise, plano, spec ou roadmap.
+4. Pronto é teste passando, não "compilou". Status sem evidência não entra no roadmap.
+5. Commits e push são do time, não do agente.

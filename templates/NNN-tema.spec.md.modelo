@@ -1,0 +1,84 @@
+# NNN — <Título da funcionalidade>
+
+<!--
+MODELO de spec — padrão Supridata (extraído de sysenota/.spec e syscomm/.spec).
+  - A numeração conta a história do projeto: 000 é o inventário/baseline, e daí em diante
+    na ordem em que as coisas precisam acontecer. Nunca renumere.
+  - Cabeçalho honesto: diga a data e se já foi implementado.
+  - A §0 é a parte que mais importa. Se um terceiro não consegue conferir, não é critério.
+Apague estes comentários antes de usar.
+-->
+
+Documento para implementação, escrito em <AAAA-MM-DD>. **<Ainda não implementado. | Em implementação. | Implementado em AAAA-MM-DD.>**
+
+## 0. Objetivo e critério de pronto
+
+<Um parágrafo: o que precisa existir ao final e contra o que isso será comparado.>
+
+Pronto quando:
+1. <condição verificável por quem não participou da conversa>
+2. <condição verificável — normalmente a suíte de teste que precisa passar>
+3. <condição verificável — artefato gerado, comparação feita, massa de teste aprovada>
+
+Legenda de status: ⬜ a conferir · ✅ igual à referência · ⚠️ divergência · ❌ falta
+
+---
+
+## 1. Mapa <referência> → <nova versão>
+
+### 1.1 Referência (o que existe hoje)
+
+| Peça | Onde |
+|---|---|
+| Regra de negócio | `<arquivo/classe>` |
+| Tela | `<arquivo>` |
+| Relatório / arquivo gerado | `<arquivo>` |
+
+### 1.2 Nova versão (o que vamos escrever)
+
+| Peça | Onde |
+|---|---|
+| API | `<Resource>` (`<endpoints>`) |
+| Serviço | `<Service>` |
+| Front | `<componentes/rota>` |
+
+---
+
+## 2. Regras, uma por linha
+
+| ID | Regra | Status | Evidência / nota |
+|---|---|---|---|
+| R01 | <regra, com o comportamento esperado e os valores> | ⬜ | <onde isso foi conferido> |
+| R02 | | ⬜ | |
+
+---
+
+## 3. Decisões e divergências
+
+Divergência da referência só de propósito, e registrada aqui **e** no `ROADMAP.md`.
+
+| ID | Divergência | Motivo | Aprovada por |
+|---|---|---|---|
+| | | | |
+
+---
+
+## 4. Perguntas abertas
+
+| ID | Pergunta | Bloqueia o quê | Responsável |
+|---|---|---|---|
+| Q1 | | | |
+
+---
+
+## 5. Testes
+
+| Arquivo | O que prova |
+|---|---|
+| `<nome>.spec.ts` | <a comparação exata que ele faz> |
+
+Comando:
+
+```bash
+<comando que roda a suíte>
+```

@@ -1,0 +1,103 @@
+---
+name: <nome-em-kebab-case>
+description: >
+  Use este skill para <a tarefa, em uma frase>. Ative sempre que o usuário mencionar:
+  "<frase que o dev digita>", "<outra frase>", "<outra>", "<outra>", ou qualquer pedido de
+  <a forma genérica da tarefa>. Mesmo que o usuário não cite <nome do padrão/projeto>
+  explicitamente — se <a condição objetiva que caracteriza a tarefa>, use este skill.
+---
+
+<!--
+MODELO de skill — padrão Supridata (extraído de sysetemplate-migrar-jsf e sysetemplate-tema-claro-escuro).
+Três regras ao preencher:
+  1. A `description` não descreve a skill para humano: ela LISTA AS PALAVRAS que o dev vai digitar.
+     Descrição vaga = skill que nunca dispara = time concluindo que "não funciona".
+  2. Este arquivo é CURTO (100–160 linhas). Código-padrão grande vai em `references/`,
+     que só é lido quando a tarefa pede. Divulgação progressiva é o que segura o custo.
+  3. Tarefa mecânica e verificável vira SCRIPT em `scripts/`, não instrução para o modelo.
+     O modelo decide quando rodar; o script garante como.
+
+Estrutura no disco:
+  <nome-da-skill>/
+    SKILL.md              ← este arquivo: o processo
+    references/*.md       ← o código-padrão, lido sob demanda
+    scripts/*.cjs|.ps1    ← o que é determinístico
+Onde colocar:
+  ~/.claude/skills/            → vale em todos os seus projetos
+  <projeto>/.claude/skills/    → só naquele repo, versionado com ele
+  <projeto>/.agents/skills/    → canônico quando há mais de uma ferramenta de IA
+Apague estes comentários antes de usar.
+-->
+
+# <Título da skill>
+
+## Contexto do projeto
+
+- **Projeto de referência:** `<caminho do template/exemplo real>`
+- **Package raiz API:** `com.supridata.<projeto>`
+- **Skills complementares:**
+  - `<outra-skill>` → <quando usar aquela em vez desta>
+
+Estas skills são cumulativas: uma tarefa transversal usa esta **e** as de API e front.
+
+---
+
+## Passo 1 — Analisar antes de escrever
+
+Ao receber o pedido, identifique:
+
+| O que veio | O que isso vira |
+|---|---|
+| `<padrão de origem>` | `<padrão de destino>` |
+| `<padrão de origem>` | `<padrão de destino>` |
+
+**Dica crucial:** <a diferença conceitual que, ignorada, produz código errado mas que compila.>
+
+---
+
+## Passo 2 — O que gerar
+
+```
+src/main/java/com/supridata/<projeto>/
+├── entity/<Entidade>.java
+├── dto/request/<Entidade>RequestDTO.java
+├── dto/response/<Entidade>ResponseDTO.java
+├── repository/<Entidade>Repository.java
+├── service/<Entidade>Service.java
+└── resource/<Entidade>Resource.java
+```
+
+Também atualizar:
+- `<arquivo>` — <o que acrescentar nele>
+
+O código-padrão exato está em `references/<arquivo>.md`. **Leia antes de escrever** e siga à risca.
+
+---
+
+## Passo 3 — <Etapa seguinte>
+
+<Passos numerados, imperativos. Cada passo diz o que fazer e como conferir.>
+
+---
+
+## Scripts
+
+| Script | O que faz | Quando rodar |
+|---|---|---|
+| `scripts/<nome>` | <trabalho mecânico que ele automatiza> | <momento> |
+
+---
+
+## Checklist antes de dizer que acabou
+
+- [ ] Segue os templates de `references/` exatamente
+- [ ] <verificação específica do domínio>
+- [ ] Compila: `<comando>`
+- [ ] Teste passa: `<comando>`
+- [ ] Spec e `ROADMAP.md` atualizados com a evidência do teste que **realmente** rodou
+
+---
+
+## O que esta skill NÃO faz
+
+- <fronteira clara, apontando a skill ou o processo que cobre aquilo>
